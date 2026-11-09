@@ -1,0 +1,198 @@
+<script src="js/script.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUTA GENRE HSU</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+</head>
+<body class="bg-gray-50" onload="AOS.init({duration:900, once:true});">
+      <!-- Header/Navbar -->
+    <header class="fixed w-full z-50">
+        <nav class="bg-white shadow-lg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-20 items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="index.html" class="font-serif text-2xl font-bold text-gray-800 flex items-center focus:outline-none focus:ring-2 focus:ring-primary rounded-lg px-2 py-1 transition hover:bg-gray-100 active:bg-gray-200" style="min-width:44px;min-height:44px; color: rgb(73, 68, 68); font-family: "Sofia";>
+                            <img src="./img/logogic.png" alt="Logo Instansi Maju Jaya" class="h-10 w-13 rounded-full mr-2">
+                            Genre HSU
+                        </a>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="./index.html" class="border-primary text-primary px-3 py-2 text-sm font-medium ">Beranda</a>
+                        <a href="./tentang.html" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-3 py-2 text-sm font-medium">Tentang</a>
+                        <a href="./kegiatan.html" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-3 py-2 text-sm font-medium ">Kegiatan</a>
+                        <a href="./anggota.html" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-3 py-2 text-sm font-medium border-b-4">24</a>
+                        <a href="./sosialmedia.html" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-3 py-2 text-sm font-medium ">Sosial media</a>
+                        <a href="./pendaftaran.html" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-3 py-2 text-sm font-medium ">Pendaftaran</a>
+                    </div>
+                    <!-- Login Admin removed -->
+                    <div class="-mr-2 flex items-center md:hidden">
+                        <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div id="mobile-menu" class="hidden md:hidden absolute top-20 right-0 w-full bg-white shadow-lg z-50">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="./index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Beranda</a>
+                    <a href="./tentang.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Tentang</a>
+                    <a href="./kegiatan.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Kegiatan</a>
+                    <a href="./anggota.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">24</a>
+                    <a href="./sosialmedia.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Sosial Media</a>
+                    <a href="./pendaftaran.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Pendaftaran</a>
+<!-- Login Admin removed from mobile menu -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+<section class="hero min-h-screen flex items-center justify-center text-white pt-20" style="background: url('./img/background.png'), center center/cover no-repeat; " data-aos="fade-out">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20" data-aos="fade-up">
+            <div class="text-center" data-aos="zoom-in">
+                <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6 slide-up">Duta Genre  <span class="text-secondary">Kabupaten HSU </span></h1>
+                <p class="text-xl md:text-2xl mb-8 fade-in delay-1">Duta Generasi Berencana Kabupaten Hulu Sungai Utara</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in delay-2" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#tentang" class="bg-secondary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-md transition duration-300">Tentang</a>
+                    <a href="#kegiatan" class="bg-transparent hover:bg-black hover:text-primary text-white font-bold py-3 px-6 border border-white rounded-md transition duration-300">Kegiatan</a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce fade-in delay-4">
+            <a href="#tentang">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Tentang Section -->
+<section id="tentang" class="py-20 bg-white" data-aos="fade-out">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20" data-aos="fade-right">
+            <div class="text-center mb-16 slide-right" data-aos="zoom-in">
+                <h2 class="text-3xl font-serif font-bold text-gray-800 mb-4">Tentang Kami</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+                <div class="slide-left" data-aos="fade-right">
+                    <img src="./img/tentang.jpg"alt="Gedung kantor modern Instansi Maju dengan arsitektur kontemporer dan lingkungan hijau" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="slide-right delay-1" data-aos="fade-left" data-aos-delay="200">
+                    <p class="text-gray-600 mb-6">Duta GenRe (Generasi Berencana) adalah figur remaja teladan yang dipilih untuk menjadi agen perubahan dalam menyampaikan informasi seputar kesehatan reproduksi remaja, perencanaan kehidupan berkeluarga, serta upaya pencegahan terhadap perilaku berisiko seperti seks bebas, HIV/AIDS, dan penyalahgunaan narkoba.
+Sebagai bagian dari program BKKBN, Duta GenRe berkomitmen menjadi contoh positif bagi remaja lainnya dalam membangun masa depan yang terencana, berkualitas, dan berkarakter.
+"Karena berencana itu keren!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Section -->
+<section id="kegiatan" class="py-20 bg-white" data-aos="fade-out">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-right">
+            <div class="text-center mb-16 slide-right" data-aos="zoom-in">
+                <h2 class="text-3xl font-serif font-bold text-gray-800 mb-4">Kegiatan</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Kegiatan Kegiatan Yang Diikuti Oleh Duta Genre Kabupaten Hulu Sungai Utara</p>
+                <div class="w-20 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div id="home-events-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-in delay-1" data-aos="fade-up">
+                <!-- Gallery Item 1 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover" data-aos="zoom-in">
+                    <img src="./img/43.jpg" alt="Kegiatan pelatihan sertifikasi di aula utama dengan peserta dari berbagai daerah" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-xl font-bold">Foto Bersama</h3>
+                        
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="./img/42.jpg" alt="Peresmian gedung baru Instansi Maju dengan tarian tradisional dan pemotongan pita" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-xl font-bold">PILDUGEN 2024</h3>
+                        
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="./img/41.jpg" alt="Acara penghargaan untuk pegawai berprestasi di aula serbaguna dengan piala dan sertifikat" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-xl font-bold">GENRE FUN FESTIVAL</h3>
+                    
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="./img/1.jpg" alt="Kunjungan kerja pejabat tinggi ke lokasi proyek dengan rombongan dan dokumentasi profesional" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-xl font-bold">Sosialisasi</h3>
+                    
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="./img/39.jpg" alt="Pelayanan masyarakat di lobby utama dengan sistem antrian modern dan ruang tunggu nyaman" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-xl font-bold">Musyawarah Besar 2024</h3>
+                        
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover" data-aos="zoom-in" data-aos-delay="500">
+                    <img src="./img/34.jpg" alt="Kegiatan sosial CSR di komunitas lokal dengan pembagian bantuan dan edukasi kepada warga" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-xl font-bold">Sosialisasi</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10 slide-up delay-3">
+                <a href="kegiatan.html" class="inline-block relative overflow-hidden bg-primary text-black font-bold py-3 px-8 rounded-md shadow-lg transition-all duration-300 group">
+                  <span class="absolute inset-0 bg-blue-800 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 z-0"></span>
+                  <span class="relative z-10 group-hover:text-yellow-300 transition-colors duration-300">Lihat Selengkapnya</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+                                        <!-- bagian footer -->
+
+    <div class="text-sm text-gray-400 text-center md:text-right" style="color: blacks;">
+      &copy; 2025 Duta Genre HSU. Dibuat oleh Z.
+    </div>
+  
+    <script src="js/site-content.js"></script>
+</body>
+</html>
+
+
+
+
+
+

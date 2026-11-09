@@ -1,0 +1,97 @@
+<script src="js/script.js"></script>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUTA GENRE HSU</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sosialmedia.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+</head>
+<body class="bg-gray-50" onload="AOS.init({duration:900, once:true});">
+       <!-- Header/Navbar -->
+    <header class="fixed w-full z-50">
+        <nav class="bg-white shadow-lg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-20 items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="index.html" class="font-serif text-2xl font-bold text-gray-800 flex items-center focus:outline-none focus:ring-2 focus:ring-primary rounded-lg px-2 py-1 transition hover:bg-gray-100 active:bg-gray-200" style="min-width:44px;min-height:44px; color: rgb(73, 68, 68); font-family: "Sofia";>
+                            <img src="./img/logogic.png" alt="Logo Instansi Maju Jaya" class="h-10 w-13 rounded-full mr-2">
+                            Genre HSU
+                        </a>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="./index.html" class="border-primary text-primary px-3 py-2 text-sm font-medium ">Beranda</a>
+                        <a href="./tentang.html" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-3 py-2 text-sm font-medium">Tentang</a>
+                        <a href="./kegiatan.html" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-3 py-2 text-sm font-medium ">Kegiatan</a>
+                        <a href="./anggota.html" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-3 py-2 text-sm font-medium border-b-4">24</a>
+                        <a href="./sosialmedia.html" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-3 py-2 text-sm font-medium ">Sosial media</a>
+                        <a href="./pendaftaran.html" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-3 py-2 text-sm font-medium ">Pendaftaran</a>
+                    </div>
+                    <!-- Login Admin removed -->
+                    <div class="-mr-2 flex items-center md:hidden">
+                        <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div id="mobile-menu" class="hidden md:hidden absolute top-20 right-0 w-full bg-white shadow-lg z-50">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="./index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Beranda</a>
+                    <a href="./tentang.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Tentang</a>
+                    <a href="./kegiatan.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Kegiatan</a>
+                    <a href="./anggota.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">24</a>
+                    <a href="./sosialmedia.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Sosial Media</a>
+                    <a href="./pendaftaran.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Pendaftaran</a>
+<!-- Login Admin removed from mobile menu -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    
+     <!-- isi -->
+    <main class="max-w-3xl mx-auto mb-16 px-4 pt-36" data-aos="fade-up">
+        <section class="sosmed-section">
+            <h1 class="text-3xl font-bold mb-4 text-center text-primary">Informasi Sosial Media</h1>
+            <p class="mb-6 text-gray-700 text-center">Temukan dan ikuti sosial media resmi Instansi Duta Genre HSU untuk mendapatkan informasi terbaru, kegiatan, dan inspirasi seputar generasi berencana!</p>
+            <div class="flex flex-col gap-6 items-center">
+                <a href="https://instagram.com/dutagenre_hsu" target="_blank" class="flex items-center gap-3 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white px-6 py-3 rounded-lg shadow-md w-full max-w-xs justify-center">
+                    <img src="img/logo instagram.webp" alt="Instagram" class="sosmed-icon h-8 w-8 object-contain">
+                    <span class="font-semibold">INSTAGRAM</span>
+                </a>
+                <a href="https://facebook.com/DutaGenreHsu" target="_blank" class="flex items-center gap-3 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md w-full max-w-xs justify-center">
+                    <img src="./img/logofacebook.png" alt="Facebook" class="sosmed-icon h-8 w-8 object-contain">
+                    <span class="font-semibold">FAECBOOK</span>
+                </a>
+                <a href="https://tiktok.com/@dutagenre_hsu" target="_blank" class="flex items-center gap-3 bg-black text-white px-6 py-3 rounded-lg shadow-md w-full max-w-xs justify-center">
+                    <img src="./img/logotiktok.webp" alt="TikTok" class="sosmed-icon h-8 w-8 object-contain">
+                    <span class="font-semibold">TIKTOK</span>
+                </a>
+                <!-- Tombol YouTube -->
+                <a href="https://youtube.com/@genrehsu189" target="_blank" class="flex items-center gap-3 bg-red-600 text-white px-6 py-3 rounded-lg shadow-md w-full max-w-xs justify-center">
+                    <img src="./img/logoyoutube.png" alt="YouTube" class="sosmed-icon h-8 w-8 object-contain">
+                    <span class="font-semibold">YOUTUBE</span>
+                </a>
+            </div>
+            <div class="sosmed-info mt-8 text-center text-gray-500 text-sm">
+                <p>Untuk informasi lebih lanjut, hubungi kami melalui sosial media di atas.</p>
+            </div>
+        </section>
+    </main>
+     <!-- bagian footer -->
+
+<footer class="simple-footer" data-aos="fade-out">
+  <p>&copy; 2025 Duta Genre HSU, pembuat #Z</p>
+</footer>
+</body>
+</html>

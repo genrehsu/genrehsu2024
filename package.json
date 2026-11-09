@@ -1,0 +1,15 @@
+{
+  "name": "duta-genre-hsu",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "create-admin-hash": "node scripts/create-admin-hash.mjs"
+  },
+  "devDependencies": {
+    "vercel": "^39.0.0"
+  }
+}

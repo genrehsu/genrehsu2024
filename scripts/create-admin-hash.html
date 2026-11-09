@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Generator Hash Admin | Duta Genre HSU</title>
+  <style>
+    body {
+      max-width: 560px;
+      margin: 48px auto;
+      padding: 0 20px;
+      color: #1f2937;
+      font: 16px/1.5 system-ui, sans-serif;
+    }
+    h1 { font-size: 1.6rem; }
+    label { display: block; margin-top: 16px; font-weight: 600; }
+    input, button, textarea {
+      box-sizing: border-box;
+      width: 100%;
+      margin-top: 6px;
+      padding: 10px;
+      font: inherit;
+    }
+    button { cursor: pointer; }
+    textarea { min-height: 100px; }
+    [role="status"] { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Generator hash admin</h1>
+    <p>Password diproses di browser ini dan tidak dikirim ke server. Gunakan halaman ini hanya melalui website tepercaya Anda.</p>
+    <form id="hash-form">
+      <label for="password">Password admin (minimal 12 karakter)</label>
+      <input id="password" type="password" minlength="12" autocomplete="new-password" required>
+      <label for="password-confirm">Ulangi password</label>
+      <input id="password-confirm" type="password" minlength="12" autocomplete="new-password" required>
+      <button id="generate-button" type="submit">Buat hash</button>
+    </form>
+    <p id="message" role="status" aria-live="polite"></p>
+    <label for="hash-output">Hash untuk kolom passwordHash</label>
+    <textarea id="hash-output" readonly placeholder="Hash akan muncul di sini"></textarea>
+    <button id="generate-secret" type="button">Buat secret acak</button>
+    <label for="secret-output">Secret acak untuk konfigurasi</label>
+    <textarea id="secret-output" readonly placeholder="Secret akan muncul di sini"></textarea>
+    <p>Gunakan secret berbeda untuk GAS_PROXY_SECRET dan SESSION_SECRET. Secret proxy juga dimasukkan melalui menu Apps Script.</p>
+  </main>
+  <script>
+    (function () {
+      const form = document.getElementById('hash-form');
+      const passwordInput = document.getElementById('password');
+      const confirmInput = document.getElementById('password-confirm');
+      const button = document.getElementById('generate-button');
+      const secretButton = document.getElementById('generate-secret');
+      const message = document.getElementById('message');
+      const output = document.getElementById('hash-output');
+      const secretOutput = document.getElementById('secret-output');
+
+      function base64url(bytes) {
+        let binary = '';
+        bytes.forEach(byte => { binary += String.fromCharCode(byte); });
+        return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
+      }
+
+      secretButton.addEventListener('click', function () {
+        secretOutput.value = base64url(crypto.getRandomValues(new Uint8Array(48)));
+      });
+
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        output.value = '';
+        message.textContent = '';
+        const password = passwordInput.value;
+        if (password.length < 12) {
+          message.textContent = 'Password harus minimal 12 karakter.';
+          return;
+        }
+        if (password !== confirmInput.value) {
+          message.textContent = 'Kedua password tidak sama.';
+          return;
+        }
+
+        button.disabled = true;
+        message.textContent = 'Membuat hash…';
+        try {
+          const salt = crypto.getRandomValues(new Uint8Array(18));
+          const key = await crypto.subtle.importKey(
+            'raw',
+            new TextEncoder().encode(password),
+            'PBKDF2',
+            false,
+            ['deriveBits']
+          );
+          const derived = await crypto.subtle.deriveBits({
+            name: 'PBKDF2',
+            salt,
+            iterations: 210000,
+            hash: 'SHA-256'
+          }, key, 256);
+          output.value = `pbkdf2$210000$${base64url(salt)}$${base64url(new Uint8Array(derived))}`;
+          message.textContent = 'Hash siap. Salin ke kolom passwordHash pada tab Admins.';
+          passwordInput.value = '';
+          confirmInput.value = '';
+        } catch (error) {
+          console.error('Gagal membuat hash admin:', error);
+          message.textContent = 'Hash gagal dibuat. Coba browser modern dengan Web Crypto aktif.';
+        } finally {
+          button.disabled = false;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

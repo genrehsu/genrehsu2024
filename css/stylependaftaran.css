@@ -1,0 +1,274 @@
+.pendaftaran-isi {
+	margin-top: 100px;
+}
+.pendaftaran-isi ul {
+	list-style-type: disc;
+	margin-left: 20px;
+	padding-left: 10px;
+}
+/* Banner image styling */
+.header-banner {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 22px;
+}
+.banner-img {
+	width: 100%;
+	max-width: 480px;
+	height: 130px;
+	object-fit: cover;
+	border-radius: 18px;
+	box-shadow: 0 6px 32px rgba(99,102,241,0.10);
+	background: linear-gradient(90deg, #e0e7ff 0%, #a21caf22 100%);
+	border: 3px solid #fff;
+	transition: box-shadow 0.3s, transform 0.3s;
+}
+.banner-img:hover {
+	box-shadow: 0 12px 48px rgba(99,102,241,0.18);
+	transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+	.header-banner {
+		margin-left: -16px;
+		margin-right: -16px;
+		width: 100vw;
+		max-width: 100vw;
+	}
+	   .banner-img {
+		   height: 140px;
+		   max-width: 100vw;
+		   width: 100vw;
+		   border-radius: 0;
+		   display: block;
+	   }
+}
+/* Header image styling */
+.header-img {
+	display: block;
+	margin: 0 auto 18px auto;
+	width: 120px;
+	height: 120px;
+	object-fit: cover;
+	border-radius: 50%;
+	box-shadow: 0 4px 16px rgba(99,102,241,0.12);
+	border: 4px solid #fff;
+	background: linear-gradient(135deg, #e0e7ff 0%, #a21caf22 100%);
+	transition: box-shadow 0.3s, transform 0.3s;
+}
+.header-img:hover {
+	box-shadow: 0 8px 32px rgba(99,102,241,0.18);
+	transform: scale(1.04) rotate(-2deg);
+}
+
+@media (max-width: 600px) {
+	.header-img {
+		width: 80px;
+		height: 80px;
+	}
+}
+/* Ripple effect for button */
+.reg-btn .ripple {
+	position: absolute;
+	border-radius: 50%;
+	transform: scale(0);
+	animation: ripple 0.6s linear;
+	background: rgba(255,255,255,0.5);
+	pointer-events: none;
+	width: 80px;
+	height: 80px;
+	left: 50%;
+	top: 50%;
+	margin-left: -40px;
+	margin-top: -40px;
+	z-index: 1;
+}
+
+@keyframes ripple {
+	to {
+		transform: scale(2.5);
+		opacity: 0;
+	}
+}
+
+/* Hanya untuk container pendaftaran, jangan ubah body global */
+.pendaftaran-isi {
+	max-width: 500px;
+	margin: 40px auto;
+	background: rgba(255,255,255,0.85);
+	border-radius: 24px;
+	box-shadow: 0 8px 32px rgba(60,60,120,0.12);
+	padding: 32px 24px 24px 24px;
+	animation: fadeIn 1.2s cubic-bezier(.77,0,.175,1);
+}
+
+.container {
+	max-width: 500px;
+	margin: 40px auto;
+	background: rgba(255,255,255,0.85);
+	border-radius: 24px;
+	box-shadow: 0 8px 32px rgba(60,60,120,0.12);
+	padding: 32px 24px 24px 24px;
+	animation: fadeIn 1.2s cubic-bezier(.77,0,.175,1);
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; transform: translateY(40px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+	font-size: 2.2rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+	margin-bottom: 8px;
+	background: linear-gradient(90deg, #2398e6, #a21caf);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+	animation: titleAnim 1.2s cubic-bezier(.77,0,.175,1);
+}
+
+@keyframes titleAnim {
+	from { letter-spacing: 12px; opacity: 0; }
+	to { letter-spacing: 1px; opacity: 1; }
+}
+
+.subtitle {
+	font-size: 1.1rem;
+	color: #555;
+	margin-bottom: 24px;
+	animation: fadeIn 1.6s cubic-bezier(.77,0,.175,1);
+}
+
+.buttons-section {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	justify-content: center;
+	margin-bottom: 32px;
+}
+
+.reg-btn {
+	flex: 1 1 180px;
+	padding: 16px 0;
+	font-size: 1.1rem;
+	font-weight: 600;
+	border: none;
+	border-radius: 16px;
+	background: linear-gradient(90deg, #2398e6 0%, #a21caf 100%);
+	color: #fff;
+	box-shadow: 0 2px 12px rgba(99,102,241,0.08);
+	cursor: pointer;
+	transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+	position: relative;
+	overflow: hidden;
+	outline: none;
+	animation: btnAnim 1.2s cubic-bezier(.77,0,.175,1);
+}
+
+.reg-btn::before {
+	content: '';
+	position: absolute;
+	left: 0; top: 0;
+	width: 100%; height: 100%;
+	background: linear-gradient(120deg, #a21caf55 0%, #6366f155 100%);
+	opacity: 0;
+	transition: opacity 0.3s;
+	z-index: 0;
+}
+
+.reg-btn:hover {
+	transform: translateY(-4px) scale(1.04);
+	box-shadow: 0 6px 24px rgba(99,102,241,0.18);
+	background: linear-gradient(90deg, #a21caf 0%, #6366f1 100%);
+}
+
+.reg-btn:hover::before {
+	opacity: 1;
+}
+
+.reg-btn:active {
+	transform: scale(0.98);
+}
+
+@keyframes btnAnim {
+	from { opacity: 0; transform: scale(0.8); }
+	to { opacity: 1; transform: scale(1); }
+}
+
+.info-section {
+	margin-top: 16px;
+	padding: 18px 12px;
+	background: rgba(245,245,255,0.7);
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(99,102,241,0.06);
+	animation: fadeIn 1.8s cubic-bezier(.77,0,.175,1);
+}
+
+.info-section h2 {
+	font-size: 1.2rem;
+	color: #6366f1;
+	margin-bottom: 10px;
+}
+
+.info-section ul {
+	padding-left: 18px;
+	margin: 0;
+	color: #333;
+	font-size: 1rem;
+}
+
+.info-section li {
+	margin-bottom: 8px;
+	transition: color 0.3s;
+}
+
+.info-section li:hover {
+	color: #a21caf;
+}
+
+.info-section a {
+	color: #6366f1;
+	text-decoration: underline;
+	transition: color 0.3s;
+}
+.info-section a:hover {
+	color: #a21caf;
+}
+
+@media (max-width: 600px) {
+	.container {
+		max-width: 98vw;
+		padding: 18px 6px 12px 6px;
+	}
+	.title {
+		font-size: 1.4rem;
+	}
+	.reg-btn {
+		font-size: 1rem;
+		padding: 12px 0;
+	}
+	.info-section {
+		padding: 10px 4px;
+	}
+}
+
+/* header */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(-60px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeSlideOut {
+  from { opacity: 1; transform: translateY(0);}
+  to   { opacity: 0; transform: translateY(-60px);}
+}
+.full-anim-in {
+  animation: fadeSlideIn 0.7s cubic-bezier(.77,0,.175,1) forwards;
+}
+.full-anim-out {
+  animation: fadeSlideOut 0.7s cubic-bezier(.77,0,.175,1) forwards;
+}

@@ -1,0 +1,29 @@
+/* CSS khusus untuk bagian isi sosial media */
+
+.sosmed-section {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2rem;
+}
+.sosmed-section h1 {
+    color: var(--primary, #1a365d);
+    font-family: 'Playfair Display', serif;
+}
+.sosmed-section a {
+    transition: transform 0.2s;
+}
+.sosmed-section a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+}
+.sosmed-section .sosmed-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+.sosmed-section .sosmed-info {
+    color: #555;
+    font-size: 1rem;
+    margin-top: 2rem;
+}
